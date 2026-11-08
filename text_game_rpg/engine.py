@@ -218,6 +218,7 @@ def parse_command(command):
         "back": "return",
         "close": "return",
         "leave": "return",
+
     }
 
     if command in shortcuts:
@@ -243,5 +244,14 @@ def parse_command(command):
 
     if command.startswith("check "):
         return command.replace("check ", "inspect ", 1)
+
+    if command.startswith("grab "):
+        return command.replace("grab ", "take ", 1)
+
+    if command.startswith("pickup "):
+        return command.replace("pickup ", "take ", 1)
+
+    if command.startswith("pick up "):
+        return command.replace("pick up ", "take ", 1)
 
     return command
